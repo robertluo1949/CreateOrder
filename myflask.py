@@ -43,7 +43,14 @@ def showpicture():
 def showhtml():
     __tempurl = url_for("static",filename="css/style.css")
     print(__tempurl)
-    temp_datetime=datetime.now().strftime("%b %d %Y %H:%M:%S")
+    temp_datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return render_template("user.html",name='Robert',datetime=temp_datetime)
+
+@app.route('/page/showcss')
+def showcss():
+    __tempurl = url_for("static",filename="css/style.css")
+    print(__tempurl)
+    temp_datetime=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return render_template("user.html",name='Robert',datetime=temp_datetime)
 
 if __name__ == '__main__':
